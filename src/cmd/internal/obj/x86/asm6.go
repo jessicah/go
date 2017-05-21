@@ -2176,7 +2176,8 @@ func prefixof(ctxt *obj.Link, p *obj.Prog, a *obj.Addr) int {
 				obj.Hfreebsd,
 				obj.Hnetbsd,
 				obj.Hopenbsd,
-				obj.Hsolaris:
+				obj.Hsolaris,
+				obj.Hhaiku:
 				return 0x64 // FS
 
 			case obj.Hdarwin:

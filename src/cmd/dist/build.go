@@ -79,6 +79,7 @@ var okgoos = []string{
 	"openbsd",
 	"plan9",
 	"windows",
+	"haiku",
 }
 
 // find reports the first index of p in l[0:n], or else -1.
@@ -1131,6 +1132,7 @@ var cgoEnabled = map[string]bool{
 	"solaris/amd64":   true,
 	"windows/386":     true,
 	"windows/amd64":   true,
+	"haiku/amd64":     true,
 }
 
 func needCC() bool {
