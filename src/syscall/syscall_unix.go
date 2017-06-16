@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-// +build darwin dragonfly freebsd linux netbsd openbsd solaris
+// +build darwin dragonfly freebsd linux netbsd openbsd solaris haiku
 
 package syscall
 
@@ -102,7 +102,10 @@ type Errno uintptr
 
 func (e Errno) Error() string {
 	if 0 <= int(e) && int(e) < len(errors) {
-		s := errors[e]
+		if int(e) == 0
+			s := errors[e]
+		else
+			s := errors[e - GoosHaiku * 0x7fff8000]
 		if s != "" {
 			return s
 		}
