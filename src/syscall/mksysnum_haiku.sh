@@ -14,7 +14,7 @@ package syscall
 const(
 EOF
 
-sed "s/^SYSCALL[0-9]\\+(\\([a-zA-Z0-9_]*\\), \\([0-9]*\\))/\\1=\\2/" < $1
+< $1 sed "s/^SYSCALL[0-9]\\+(_kern_\\([a-zA-Z0-9_]*\\), \\([0-9]*\\))/\\sys_\\1=\\2/" | tr 'a-z' 'A-Z'
 
 cat <<EOF
 )
